@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+             x:Class="MauiPopup.MainPage">
+
+    <syncfusion:SfPopup x:Name="popup" HeightRequest="300" ShowHeader="False" IsOpen="True">
+
+        <syncfusion:SfPopup.PopupStyle>
+            <syncfusion:PopupStyle PopupBackground="Transparent" />
+        </syncfusion:SfPopup.PopupStyle>
+        <syncfusion:SfPopup.ContentTemplate>
+            <DataTemplate>
+                <Grid>
+                    <!-- Arrow at the top -->
+                    <Polygon Points="0,10 10,0 20,10"
+                              Fill="LightBlue"
+                              HorizontalOptions="Center"
+                              VerticalOptions="Start"
+                              Margin="0,0,0,-5" />
+
+                    <!-- Main popup content -->
+                    <Border BackgroundColor="LightBlue" 
+                            Padding="10"
+                            Margin="0,10,0,0">  
+                        <Label Text="This is your tooltip text!"
+                                TextColor="Black"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        <Border.StrokeShape>
+                            <RoundRectangle/>
+                        </Border.StrokeShape>
+                    </Border>
+                </Grid>
+            </DataTemplate>
+        </syncfusion:SfPopup.ContentTemplate>
+    </syncfusion:SfPopup>
+
+</ContentPage>
